@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             
             // IMPORTANT: Replace the URL below with your actual Google Script Web App URL
-            const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaZ0eoH8xZ9YjXbDmsjESHwhLF3RTKCtWT3zUU4CvkQU689lD0Jcc17s-vTlgEgkKvCg/exec'; 
 
             fetch(scriptURL, { 
                 method: 'POST', 
