@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranthip Services | Tatkal Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="images/logo.png" alt="Ranthip Services Logo" class="brand-logo">
+        <h1>Express Tatkal Bookings</h1>
+        <p>Secure your train tickets effortlessly.</p>
+        <a href="#booking-section" class="btn-primary">Book Your Tatkal Ticket</a>
+    </header>
+
+    <!-- Booking Form Section (Glassmorphism) -->
+    <section id="booking-section" class="glass-container">
+        <h2>Booking Details</h2>
+        
+        <form id="tatkalForm">
+            <!-- Contact Info -->
+            <div class="form-group">
+                <input type="text" name="customerName" placeholder="Full Name" required>
+                <input type="tel" name="mobile" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="whatsapp" placeholder="WhatsApp Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <!-- Journey Details -->
+            <div class="form-group">
+                <input type="date" name="journeyDate" required>
+                <input type="text" name="class" placeholder="Class (e.g., SL, 3A, 2A)" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="fromStation" placeholder="From Station" required>
+                <input type="text" name="toStation" placeholder="To Station" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="trainNumber" placeholder="Train Number (Optional)">
+                <input type="text" name="boardingStation" placeholder="Boarding Station" required>
+            </div>
+
+            <!-- Passenger Details (Dynamic) -->
+            <div id="passenger-container">
+                <div class="passenger-row">
+                    <input type="text" name="passName[]" placeholder="Passenger Name" required>
+                    <input type="number" name="passAge[]" placeholder="Age" required>
+                    <select name="berthPref[]">
+                        <option value="">Berth Pref</option>
+                        <option value="Lower">Lower</option>
+                        <option value="Middle">Middle</option>
+                        <option value="Upper">Upper</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" id="add-passenger" class="btn-secondary">+ Add Passenger</button>
+
+            <!-- ID Upload -->
+            <div class="form-group id-upload">
+                <select name="idType" required>
+                    <option value="">Select ID Type</option>
+                    <option value="Aadhaar">Aadhaar</option>
+                    <option value="PAN">PAN</option>
+                    <option value="Passport">Passport</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="file" name="idProof" accept="image/*,.pdf" required>
+            </div>
+            
+            <textarea name="remarks" placeholder="Any remarks?"></textarea>
+
+            <button type="submit" class="btn-primary submit-btn">Submit Booking</button>
+        </form>
+
+        <!-- Success Message Box (Hidden by default) -->
+        <div id="success-message" class="hidden-message">
+            <i class="fas fa-check-circle" style="font-size: 3rem; color: #25d366; margin-bottom: 15px;"></i>
+            <h3 style="color: #25d366; margin-bottom: 10px;">Booking Request Submitted!</h3>
+            <p>We have safely received your Tatkal details. We will message you on WhatsApp shortly to confirm your advance payment and booking status.</p>
+            <button onclick="window.location.reload()" class="btn-secondary" style="margin-top: 20px;">Book Another Ticket</button>
+        </div>
+
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <!-- Replace YOUR_NUMBER with your actual WhatsApp number with the country code (e.g., 919876543210) -->
+    <a href="https://wa.me/YOUR_NUMBER" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
